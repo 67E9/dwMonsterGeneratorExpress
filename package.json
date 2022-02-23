@@ -1,0 +1,22 @@
+{
+  "name": "dw_monster_generator_node",
+  "version": "1.0.0",
+  "description": "automated generation of custom monsters for dungeon world",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dungeon",
+    "world",
+    "monster",
+    "node.js"
+  ],
+  "author": "pascal messmer",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
