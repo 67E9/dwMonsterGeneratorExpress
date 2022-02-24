@@ -1,0 +1,61 @@
+<%- include ('header.ejs') %>
+
+<section id="output">
+  <div class="outputBox container">
+
+    <h3 class="monsterName">Monstername</h3>
+
+    <p class="">
+      <i class="tags">
+        Organisation, Größe
+      </i>
+    </p>
+
+    <p>
+      <span class="atkName">
+        Angriff
+      </span>
+      <span class="atkDmg">
+        (Schaden)
+      </span><!--
+      --><span class="atkRange">
+        Reichweite
+      </span><!--
+      --><span class="atkTag">
+        etwas Besonderes
+      </span>
+    </p>
+    <!-- comment used to remove whitespace between spans -->
+
+    <p>
+      <span class="hitPoints">
+        1
+      </span>
+      <span>TP, </span>
+      <span>Rüstung: </span>
+      <span class="armor">
+        0
+      </span>
+    </p>
+
+    <p>
+      <strong>Besonderheit: </strong>
+      <span class="specialTags"> eins, zwei drei</span>
+    </p>
+
+    <p>
+      <i>Instinkt: </i>
+      <span class="instinctOutput">Sein Instinkt!</span>
+    </p>
+    <ul class="moveOutput">
+      <li class="move1">1. Spielzug des Monsters</li>
+    </ul>
+
+    <button onClick="window.location.href=window.location.href">Zurück</button>
+
+
+  </div>
+
+</section>
+
+<%- include ('footer.ejs') %>
