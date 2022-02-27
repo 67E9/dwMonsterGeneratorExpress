@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }))
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
+const monGen = require(__dirname+'/monster.js');
 
 app.use(express.static("public"));
 
@@ -12,7 +13,14 @@ app.get('/', function(req,res){
 })
 
 app.post('/', function(req,res){
-  console.log(req.body);
+  // console.log(req.body);
+
+  mon = new Monster
+
+  mon.input()
+
+  console.log(mon)
+
   res.render('output')
 })
 
