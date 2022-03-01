@@ -3,52 +3,57 @@
 <section id="output">
   <div class="outputBox container">
 
-    <h3 class="monsterName">Monstername</h3>
+    <h3 class="monsterName"><%=monName%></h3>
 
     <p class="">
       <i class="tags">
-        Organisation, Größe
+        <%=monOrgSize%>
       </i>
     </p>
 
     <p>
       <span class="atkName">
-        Angriff
+        <%=monAtkName%>
       </span>
       <span class="atkDmg">
-        (Schaden)
-      </span><!--
+        (<%=dmg%>)
+      </span>
+      <!--
       --><span class="atkRange">
-        Reichweite
-      </span><!--
+        <%=range%>
+      </span>
+      <!--
       --><span class="atkTag">
-        etwas Besonderes
+        <%=atkTags%>
       </span>
     </p>
     <!-- comment used to remove whitespace between spans -->
 
     <p>
       <span class="hitPoints">
-        1
+        <%=monHp%>
       </span>
       <span>TP, </span>
       <span>Rüstung: </span>
       <span class="armor">
-        0
+        <%=monArm%>
       </span>
     </p>
 
     <p>
       <strong>Besonderheit: </strong>
-      <span class="specialTags"> eins, zwei drei</span>
+      <span class="specialTags"> <%=monTags%></span>
     </p>
 
     <p>
       <i>Instinkt: </i>
-      <span class="instinctOutput">Sein Instinkt!</span>
+      <span class="instinctOutput"><%=instinct%></span>
     </p>
     <ul class="moveOutput">
-      <li class="move1">1. Spielzug des Monsters</li>
+      <%for (mov of monMovs){%>
+        <%if (mov !== ""){%>
+          <li class="move1"><%=mov%></li>
+      <%}}%>
     </ul>
 
     <button onClick="window.location.href=window.location.href">Zurück</button>

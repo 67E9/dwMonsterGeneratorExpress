@@ -22,7 +22,19 @@ app.post('/', function(req, res) {
 
   console.log(mon)
 
-  res.render('output')
+  res.render('output', {
+    monName: mon.name,
+    monOrgSize: mon.tags,
+    monAtkName: mon.atkName,
+    dmg: mon.atkDmg,
+    range: mon.atkRange,
+    atkTags: mon.atkTag,
+    monHp: mon.hp,
+    monArm: mon.armor,
+    monTags: mon.specialTags,
+    instinct: mon. instinct,
+    monMovs: mon.moves,
+  })
 })
 
 app.listen('3000', function() {
@@ -39,6 +51,7 @@ class Monster {
   constructor(name, tags, atkName, atkDmg, atkRange, atkTag, hp, armor, specialTags, instinct, moves) {
     this.name = name;
     this.tags = tags;
+    this.atkName = atkName;
     this.atkDmg = atkDmg;
     this.atkRange = atkRange;
     this.atkTag = atkTag;
@@ -46,7 +59,7 @@ class Monster {
     this.armor = armor;
     this.specialTags = specialTags;
     this.instinct = instinct;
-    this.moves = moves;
+    this.moves = moves; //returns array
   }
 
   input(body) {
@@ -395,7 +408,7 @@ function getSpecialTags(body) {
 function getMoves(body) {
   let mov = [];
 
-  mov.push(body.instinctInput)
+  mov.push(body.moveInput)
   //add first move to array mov
 
   const othMov = ["trickery", "magic", "deceitful", "grp", "externar"];
