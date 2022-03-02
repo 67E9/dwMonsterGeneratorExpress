@@ -10,10 +10,10 @@
     <form class="controls" id="controls" action="/" method="post">
 
       <h4>Welche Taten kennt man von ihm? (Sein erster Spielzug)</h4>
-      <textarea name="moveInput" rows="2" cols="80" form="controls"></textarea>
+      <textarea name="moveInput" rows="2" cols="80" form="controls" required></textarea>
 
       <h4>Was will es, das anderen Probleme verursacht? (Sein Instinkt)</h4>
-      <textarea name="instinctInput" rows="2" cols="80" form="controls"></textarea>
+      <textarea name="instinctInput" rows="2" cols="80" form="controls" required></textarea>
 
       <h4>Wie jagt oder kämpft es normalerweise?</h4>
       <input type="radio" name="grpRadio1" checked="checked" id="grpRadio1"><label for="grpRadio1"> In großen Gruppen: Horde, W6 Schaden, 3 TP</label>
@@ -58,13 +58,13 @@
       <input type="checkbox" name="trickeryCheck" id="trickeryCheck"><label for="trickeryCheck">Täuschung und List: Heimlich, schreibe einen Spielzug über schmutzige Tricks</label>
       <br>
       <div class="trickeryDiv">
-        <textarea name="trickeryInput" id="trickeryInput" rows="2" cols="80" form="controls"></textarea>
+        <textarea name="trickeryInput" id="trickeryInput" rows="2" cols="80" form="controls"></textarea>  <!--required by js-->
       </div>
       <input type="checkbox" name="adaptationCheck" id="adaptationCheck"><label for="AdaptationCheck">Eine nützliche Anpassung wie Flügel oder amphibische Lebensweise: füge eine Anpassung als
         Besonderheit hinzu</label>
       <br>
       <div class="adaptationDiv">
-        <label class="" for="adaptationInput">Anpassung (1 Wort): <input type="text" name="adaptationInput" id="adaptationInput"> </label>
+        <label class="" for="adaptationInput">Anpassung (1 Wort): <input type="text" name="adaptationInput" id="adaptationInput" > <!--required by js--> </label>
       </div>
       <input type="checkbox" name="godsCheck" id="godsCheck"><label for="godsCheck">Gunst der Götter: Göttlich und...(deine Entscheidung)</label>
       <br>
@@ -77,11 +77,11 @@
       <input type="checkbox" name="magicCheck" id="magicCheck"><label for="magicCheck">Zauber und Magie: Magisch,schreibe einen Spielzug über seine magischen Fähigkeiten</label>
       <br>
       <div class="magicDiv">
-        <textarea name="magicInput" id="magicInput" rows="2" cols="80" form="controls"></textarea>
+        <textarea name="magicInput" id="magicInput" rows="2" cols="80" form="controls"></textarea> <!--required by js-->
       </div>
 
       <h4>Was ist seine übliche Angriffsart?</h4>
-      <label for="atkTypeInput">Angriffsart (z.B. Waffe, Klauen, Zauberspruch): <input type="text" name="atkTypeInput" id="atkTypeInput"></label>
+      <label for="atkTypeInput">Angriffsart (z.B. Waffe, Klauen, Zauberspruch): <input type="text" name="atkTypeInput" id="atkTypeInput" required></label>
 
       <input type="checkbox" name="cruelWeaponCheck" id="cruelWeaponCheck"> <label for="cruelWeaponCheck">Seine Bewaffnung ist grausam und offensichtlich: + 2 Schaden</label>
       <br>
@@ -110,13 +110,13 @@
         Schadenswürfel um eine Kategorie, schreibe einen Spielzug darüber, was es so gefährlich macht:</label>
       <br>
       <div class="deceitfulDiv">
-        <textarea name="deceitfulInput" rows="2" cols="80" form="controls"></textarea>
+        <textarea name="deceitfulInput" rows="2" cols="80" form="controls"></textarea> <!--required by js-->
       </div>
       <input type="checkbox" name="grpCheck" id="grpCheck"> <label for="grpCheck">Es lebt in großen Gruppen, die ihm zur Hilfe eilen: Organisiert, schreibe einen Spielzug darüber, wie es andere zur Hilfe
         ruft:</label>
       <br>
       <div class="grpDiv">
-        <textarea name="grpInput" rows="2" cols="80" form="controls"></textarea>
+        <textarea name="grpInput" rows="2" cols="80" form="controls"></textarea> <!--required by js-->
       </div>
       <input type="checkbox" name="intelCheck" id="intelCheck"> <label for="intelCheck">Es ist ungefähr so intelligent wie ein Mensch: Intelligent</label>
       <br>
@@ -129,7 +129,7 @@
         Macht einsetzt.</label>
       <br>
       <div class="externarDiv">
-        <textarea name="externarInput" rows="2" cols="80" form="controls"></textarea>
+        <textarea name="externarInput" rows="2" cols="80" form="controls"></textarea> <!--required by js-->
       </div>
       <input type="checkbox" name="unliveCheck" id="unliveCheck"> <label for="unliveCheck">Es wird von etwas Unnatürlichen am Leben erhalten: +4 TP</label>
       <br>
@@ -137,14 +137,14 @@
         seinem Exitenzgrund zusammenhängen.</label>
       <br>
       <div class="constructDiv">
-        <label for="constructInput1">Besonderheit 1: <input type="text" name="constructInput1" id="constructInput1"></label>
-        <label for="constructInput2">Besonderheit 2: <input type="text" name="constructInput2" id="constructInput2"></label>
+        <label for="constructInput1">Besonderheit 1: <input type="text" name="constructInput1" id="constructInput1"></label> <!--required by js-->
+        <label for="constructInput2">Besonderheit 2: <input type="text" name="constructInput2" id="constructInput2"></label> <!--required by js-->
       </div>
       <input type="checkbox" name="terribleCheck" id="terribleCheck"> <label for="terribleCheck">Seine Erscheinung ist verstörend, schrecklich oder furchtbar: Furcherregend, schreibe eine Besonderheit darüber,
         warum es so schrecklich ist.</label>
       <br>
       <div class="terribleDiv">
-        <label for="terribleInput">Besonderheit 1: <input type="text" name="terribleInput" id="terribleInput"></label>
+        <label for="terribleInput">Besonderheit 1: <input type="text" name="terribleInput" id="terribleInput"><!--required by js--></label>
       </div>
       <input type="checkbox" name="amorphousCheck" id="amorphousCheck"> <label for="amorphousCheck">Es hat keine Organe oder erkennbare Anatomie: Amorph, +1 Rüstung, +3 TP</label>
       <br>
@@ -153,7 +153,7 @@
       <input type="checkbox" name="pacifistCheck" id="pacifistCheck"> <label for="pacifistCheck">Es schreckt vor Gewalt zurück: würfel zweimal Schaden und nehmen das niedrigere Ergebnis</label>
 
       <h4>Wie heißt dein Monster? </h4>
-      <textarea name="monsterNameInput" rows="1" cols="80" form="controls"></textarea>
+      <textarea name="monsterNameInput" rows="1" cols="80" form="controls" required></textarea>
 
       <button class="button-primary" name="createMonsterBtn" id="createBtn">Monster erstellen</button>
 
