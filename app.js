@@ -14,13 +14,13 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
-  // console.log(req.body);
+  console.log(req.body);
 
   mon = new Monster
 
   mon.input(req.body)
 
-  console.log(mon)
+  // console.log(mon)
 
   res.render('output', {
     monName: mon.name,
@@ -80,27 +80,27 @@ class Monster {
 function getTags(body) {
   let tags = "";
 
-  if (body.grpRadio1 === "on") {
+  if (body.grpRadio === "1") {
     tags = tags + "Horde";
-  } else if (body.grpRadio2 === "on") {
+  } else if (body.grpRadio === "2") {
     tags = tags + "Gruppe";
-  } else if (body.grpRadio3 === "on") {
+  } else if (body.grpRadio === "3") {
     tags = tags + "Einzelgänger";
   }
 
-  if (body.sizRadio1 === "on") {
+  if (body.sizRadio === "1") {
     tags = tags + ", Winzig";
-  } else if (body.sizRadio2 === "on") {
+  } else if (body.sizRadio === "2") {
     tags = tags + ", Klein";
-  } else if (body.sizRadio3 === "on") {
+  } else if (body.sizRadio === "3") {
     tags = tags + "";
-  } else if (body.sizRadio4 === "on") {
+  } else if (body.sizRadio === "4") {
     tags = tags + ", Groß";
-  } else if (body.sizRadio5 === "on") {
+  } else if (body.sizRadio === "5") {
     tags = tags + ", Riesig";
   }
 
-  if (body.defRadio5 === "on") {
+  if (body.defRadio === "5") {
     tags = tags + ", Magisch";
   }
 
@@ -156,19 +156,19 @@ function getAtkDmg(body) {
   // if doubleDmg > 0: better of 2 dice
   // if doubleDmg < 0: worse of 2 dice
 
-  if (body.grpRadio1 === "on") {
+  if (body.grpRadio === "1") {
     diceNum = 2;
-  } else if (body.grpRadio2 === "on") {
+  } else if (body.grpRadio === "2") {
     diceNum = 3;
-  } else if (body.grpRadio3 === "on") {
+  } else if (body.grpRadio === "3") {
     diceNum = 4;
   }
 
-  if (body.sizRadio1 === "on") {
+  if (body.sizRadio === "1") {
     dmgBonus -= 2;
-  } else if (body.sizRadio4 === "on") {
+  } else if (body.sizRadio === "4") {
     dmgBonus += 1;
-  } else if (body.sizRadio5 === "on") {
+  } else if (body.sizRadio === "5") {
     dmgBonus += 3;
   }
 
@@ -180,7 +180,7 @@ function getAtkDmg(body) {
     doubleDmg += 1;
   }
 
-  if (body.godsCheck === "on" && (body.godsRadio1 === "on" || body.godsRadio3 === "on")) {
+  if (body.godsCheck === "on" && (body.godsRadio === "1" || body.godsRadio === "3")) {
     dmgBonus += 2;
   }
 
@@ -236,14 +236,14 @@ function getAtkRange(body) {
   let long = false;
   let range = ""
 
-  if (body.sizRadio1 === "on") {
+  if (body.sizRadio === "1") {
     hand = true;
-  } else if (body.sizRadio2 === "on" || body.sizRadio3 === "on") {
+  } else if (body.sizRadio === "2" || body.sizRadio === "3") {
     close = true;
-  } else if (body.sizRadio4 === "on") {
+  } else if (body.sizRadio === "4") {
     close = true;
     reach = true;
-  } else if (body.sizRadio5 === "on") {
+  } else if (body.sizRadio === "5") {
     reach = true;
   }
 
@@ -252,10 +252,10 @@ function getAtkRange(body) {
   }
 
   if (body.rangedCheck === "on") {
-    if (body.rangedRadio1 === "on" || body.rangedRadio3 === "on") {
+    if (body.rangedRadio === "1" || body.rangedRadio === "3") {
       short = true;
     }
-    if (body.rangedRadio2 === "on" || body.rangedRadio3 === "on") {
+    if (body.rangedRadio === "2" || body.rangedRadio === "3") {
       long = true;
     }
   }
@@ -293,10 +293,10 @@ function getAtkTags(body) {
   }
 
   if (body.metalCheck === "on") {
-    if (body.metalRadio1 === "on") {
+    if (body.metalRadio === "1") {
       piercing += 1;
     }
-    if (body.metalRadio2 === "on") {
+    if (body.metalRadio === "2") {
       piercing += 3;
     }
   }
@@ -320,17 +320,17 @@ function getAtkTags(body) {
 function getHp(body) {
   let hp = 0
 
-  if (body.grpRadio1 === "on") {
+  if (body.grpRadio === "1") {
     hp = 3;
-  } else if (body.grpRadio2 === "on") {
+  } else if (body.grpRadio === "2") {
     hp = 6;
-  } else if (body.grpRadio3 === "on") {
+  } else if (body.grpRadio === "3") {
     hp = 12;
   }
 
-  if (body.sizRadio4 === "on") {
+  if (body.sizRadio === "4") {
     hp += 4;
-  } else if (body.sizRadio5 === "on") {
+  } else if (body.sizRadio === "5") {
     hp += 8;
   }
 
@@ -338,7 +338,7 @@ function getHp(body) {
     hp += 4;
   }
 
-  if (body.godsCheck === "on" && (body.godsRadio2 === "on" || body.godsRadio3 === "on")) {
+  if (body.godsCheck === "on" && (body.godsRadio === "2" || body.godsRadio === "3")) {
     hp += 2;
   }
 
@@ -356,13 +356,13 @@ function getHp(body) {
 function getArmor(body) {
   let arm = 0;
 
-  if (body.defRadio2 === "on") {
+  if (body.defRadio === "2") {
     arm += 1;
-  } else if (body.defRadio3 === "on") {
+  } else if (body.defRadio === "3") {
     arm += 2;
-  } else if (body.defRadio4 === "on") {
+  } else if (body.defRadio === "4") {
     arm += 3;
-  } else if (body.defRadio5 === "on") {
+  } else if (body.defRadio === "5") {
     arm += 4;
   }
 

@@ -33,30 +33,32 @@
       <span class="hitPoints">
         <%=monHp%>
       </span>
-      <span>TP, </span>
-      <span>Rüstung: </span>
+      <span class="hpTxt">TP, </span>
+      <span class="armTxt">Rüstung: </span>
       <span class="armor">
         <%=monArm%>
       </span>
     </p>
 
     <p>
-      <strong>Besonderheit: </strong>
+      <strong class ="specTxt">Besonderheit: </strong>
       <span class="specialTags"> <%=monTags%></span>
     </p>
 
     <p>
-      <i>Instinkt: </i>
+      <i class="instinctTxt">Instinkt: </i>
       <span class="instinctOutput"><%=instinct%></span>
     </p>
-    <ul class="moveOutput">
+    <div class="moveOutput">
       <%for (mov of monMovs){%>
         <%if (mov !== ""){%>
-          <li class="move1"><%=mov%></li>
+          <span class="move">- <%=mov%></span><br />
       <%}}%>
-    </ul>
+    </div>
 
     <button onClick="window.location.href=window.location.href">Zurück</button>
+
+    <button type="button" name="button" onClick="copyToClipboard();">Kopieren</button>
 
 
   </div>
