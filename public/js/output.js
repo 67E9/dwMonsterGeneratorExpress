@@ -1,17 +1,19 @@
 const monsterdata = $(".monsterName").text().trim() + "\r" + $(".tags").text().trim() +
   "\r" + $(".atkName").text().trim() + $(".atkDmg").text().trim() +
   $(".atkRange").text().trim() + $(".atkTag").text().trim() + "\r" +
-  $(".hitPoints").text().trim() + $(".hpTxt").text().trim() + $(".armTxt").text().trim() +
-  $(".armor").text().trim() + "\r" + $(".specTxt").text().trim() +
-  $(".specialTags").text().trim() + "\r" + $(".instinctTxt").text().trim() +
+  $(".hitPoints").text().trim() + " " + $(".hpTxt").text().trim() + " " + $(".armTxt").text().trim() +
+  " " + $(".armor").text().trim() + "\r" + $(".specTxt").text().trim() + " " +
+  $(".specialTags").text().trim() + "\r" + $(".instinctTxt").text().trim() + " " +
   $(".instinctOutput").text().trim() + allMoves();
 //trim() removes leading and final whitespace
 
 function allMoves() {
   let moves = ""
-  for (item of $(".move")) { //bug: item return [object HTMLSpanElement] instead of the text
-    moves = moves + "\r" + item;
-  }
+
+  $(".move").each(function(){
+    moves = moves + "\r" + $(this).html();
+  })
+
   return moves
 }
 
