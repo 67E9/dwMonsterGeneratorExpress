@@ -1,5 +1,6 @@
-body{
+.container{
   background-color: #FCF5E5;
+  padding: 10px;
 }
 
 h1{
@@ -18,7 +19,7 @@ h3{
 }
 
 h4{
- margin-top: 2rem;
+ margin-top: 3rem;
  font-size: 2rem;
  font-weight: bold;
 }

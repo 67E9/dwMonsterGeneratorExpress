@@ -418,7 +418,6 @@ function getMoves(body) {
       mov.push(eval('body.' + y + 'Input'));
     }
   }
-  //add further moves from html to array mov
 
   return mov; //returns array
 }
