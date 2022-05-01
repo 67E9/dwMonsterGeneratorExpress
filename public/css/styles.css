@@ -1,7 +1,4 @@
-.container{
-  background-color: #FCF5E5;
-  padding: 10px;
-}
+
 
 h1{
 font-family: serif;
@@ -37,6 +34,7 @@ input[type='radio'] {
 input[type='text']{
   margin-left: 0.5rem;
   width: 50%;
+  font-weight: normal;
 }
 
 label {
@@ -57,6 +55,11 @@ textarea{
 #trickeryInput, #deceitfulInput, #grpInput, #externarInput{
   margin-top: 0;
   margin-bottom: 3rem;
+}
+
+.container{
+  background-color: #FCF5E5;
+  padding: 10px;
 }
 
 .godsDiv , .rangedDiv, .metalDiv {
